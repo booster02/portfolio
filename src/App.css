@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;300;400;600&family=Noto+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family="Roboto", sans-serif&display=swap');
+.App {
+  --buttonBackground: #151515;
+  --buttonHoverBackground: #050505;
+  --lineColor: white;
+  --HeadlineColor: #89CA7B;
+  --textColor: white;
+  background-color: #242424;
+  color: var(--textColor);
+}
+.App.whiteMode {
+  --buttonBackground: #666;
+  --buttonHoverBackground: #333;
+  --lineColor: #999;
+  --HeadlineColor: #0038C8;
+  --textColor: black;
+  background-color: #DDD;
+  color: var(--textColor);
+}
+html {
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+}
+body {
+  align-self: start;
+  max-width: 100vw;
+}
+body, body *{
+  margin: 0;
+  padding: 0;
+}
+#root {
+  align-self: start;
+  max-width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+.App {
+  max-width: 100vw;
+  height: 100%;
+  font-family: "Roboto", sans-serif, sans-serif;
+}
+
+.navBarContainer {
+  display: flex;
+  justify-content: end;
+  width: 100%;
+  height: 4rem;
+  position: fixed;
+  background-color: transparent;
+}
+.navBar {
+  display: flex;
+  justify-content: space-around;
+  margin-right: 10rem;
+}
+.navItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 7rem;
+  transition: 0.3s;
+  color: var(--textColor);
+}
+.navItem:hover {
+  background-color: white;
+  color: #222;
+  cursor: pointer;
+}
+.navLink{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+  font-size: 17px;
+  color: var(--textColor);
+}
+.navLink:hover {
+  color: #222;
+}
+.theme-toggle {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0;
+  border: none;
+  background-color: transparent;
+}
+.theme-toggle:focus {
+  outline: none;
+  box-shadow: none;
+}
+.pageTheme {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+}
+
+.infoText {
+  height: 100vh;
+  width: fit-content;
+  margin-left: calc(13vw);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.infoHeadline, .headlineTextArea{
+  font-size: 120px;
+  font-family: "JetBrains Mono", sans-serif;
+  color: var(--HeadlineColor);
+  filter: drop-shadow(0 0 2px var(--HeadlineColor));
+  background-color: transparent;
+  border: none;
+}
+.infoHeadline {
+  display: flex;
+  flex-wrap: wrap;
+}
+.headlineTextArea {
+  border: 1px solid black;
+  max-width: 850px;
+  width: fit-content;
+  height: fit-content;
+  overflow: hidden;
+  box-shadow: none;
+  caret-color: transparent;
+}
+.headlineTextArea:focus {
+  outline: 0 solid blue;
+}
+#contactButton {
+  align-self: start;
+}
+.standardButton {
+  color: white;
+  border: none;
+  margin-top: 1rem;
+  height: 3rem;
+  width: 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  transition: 0.3s;
+  cursor: pointer;
+  background-color: var(--buttonBackground);
+}
+.standardButton:hover {
+  background-color: var(--buttonHoverBackground);
+  color: white;
+}
+.blink {
+  animation: blink 1s linear infinite;
+}
+
+
+.subHeadline {
+  margin: 1rem auto;
+  font-size: 40px;
+  color: var(--HeadlineColor);
+  filter: drop-shadow(0 0 2px var(--HeadlineColor));
+}
+
+.aboutContainer {
+  max-width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: calc(13vw);
+}
+.aboutText {
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+  max-width: 650px;
+}
+#aboutHeadline {
+  margin-left: 0;
+}
+#portrait {
+  margin: auto;
+  width: 300px;
+}
+
+.projects {
+  display: flex;
+  max-width: 1300px;
+  flex-wrap: wrap;
+  margin-left: calc(13vw);
+}
+.projectCard {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  border: 1px solid var(--HeadlineColor);
+  width: 331px;
+  box-shadow: 0 0 2px var(--HeadlineColor);
+}
+.projectPicture {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  align-self: center;
+  height: 156px;
+  width: 331px;
+}
+.projectInfo {
+  margin: 10px;
+  text-align: justify;
+}
+.projectLink {
+  width: 331px;
+  height: 223px;
+  color: var(--textColor);
+  text-decoration: none;
+  padding: 0 2rem 0 0;
+  margin: 1rem auto 1rem 0;
+}
+
+.contactContainer {
+  display: flex;
+  justify-content: center;
+  font-size: xx-large;
+  text-decoration: underline;
+}
+.contact {
+  max-width: 70vw;
+}
+
+.anchor {
+  display: block;
+  padding-top: 4rem;
+  margin-top: -4rem;
+  max-width: 10px;
+}
+
+.contactText {
+  margin-left: 5rem;
+}
+
+.hyperlink {
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0%;
+  }
+}

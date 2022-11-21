@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Design</title>
+    <link rel="stylesheet" href="App.css">
+</head>
+<style>
+    body {
+        align-self: start;
+        max-width: 100vw;
+        margin: 0;
+        padding: 0;
+        color: white;
+        background-color: #242424;
+    }
+</style>
+<body>
+<nav class="navBarContainer">
+    <ul class="navBar">
+        <li class="navItem"><a class="hyperlink navLink" href="#about">About</a></li>
+        <li class="navItem"><a class="hyperlink navLink" href="#projects">Projects</a></li>
+        <li class="navItem"><a class="hyperlink navLink" href="#contactHeadline">Contact</a></li>
+    </ul>
+</nav>
+<div class="infoText">
+    <h1 class="infoHeadline">Ich - <br/> Mein Name <br/> und Beruf</h1>
+    <a class="hyperlink standardButton" id="contactButton" href="#contactHeadline">Contact me</a>
+</div>
+<textarea class="headlineTextArea"></textarea>
+<div class="projectsContainer">
+    <div class="projectCard">
+        <div class="projectMainPart">
+            <img class="picture" src="/assets/weatherFrontpage.png" alt="Project Preview"
+                 height="600px"/>
+            <div class="projectInfo">
+                <h2 id="projects" class="subHeadline">Wetterprojekt</h2>
+                <p>Blue bottle excepteur forage, trust fund pickled man bun vibecession. Fam
+                    glossier chartreuse fashion
+                    axe. Art party palo santo praxis, succulents consequat eiusmod stumptown tempor readymade. 3 wolf
+                    axe. Art party palo santo praxis, succulents consequat eiusmod stumptown tempor readymade. 3 wolf
+                    axe. Art party palo santo praxis, succulents consequat eiusmod stumptown tempor readymade. 3 wolf
+                    normcore irony banjo. Coloring book trust fund vexillologist officia, gatekeep air plant pabst
+                    normcore irony banjo. Coloring book trust fund vexillologist officia
+                </p>
+            </div>
+        </div>
+        <hr class="splitLine"/>
+    </div>
+</div>
+<div class="contactContainer">
+    <div class="contact">
+        <div class="contactInfo">
+            <form class="contactForm">
+                <label for="email" class="label">Your email</label>
+                <input id="email" type="text" class="inputField" placeholder="Enter your email"/>
+                <label for="message" class="label">Your message</label>
+                <input id="message" type="text" class="inputField" placeholder="Enter your message" size="90"/>
+                <button type="submit" id="submitButton" class="standardButton">Send</button>
+            </form>
+            <div class="contactText">
+                <h2 class="subHeadline" id="contactHeadline">Contact Me</h2>
+                <p>Blue bottle excepteur forage, trust fund pickled man bun vibecession. Fam
+                    glossier chartreuse fashion
+                    axe. Art party palo santo praxis, succulents consequat eiusmod stumptown tempor readymade. 3 wolf
+                    axe. Art party palo santo praxis, succulents consequat eiusmod stumptown tempor readymade. 3 wolf
+                    axe. Art party palo santo praxis, succulents consequat eiusmod stumptown tempor readymade. 3 wolf
+                    normcore irony banjo. Coloring book trust fund vexillologist officia, gatekeep air plant pabst
+                    normcore irony banjo. Coloring book trust fund vexillologist officia</p>
+            </div>
+        </div>
+        <hr class="splitLine"/>
+    </div>
+</div>
+</body>
+</html>
