@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;300;400;600&family=Noto+Serif&display=swap');
-@import url('https://fonts.googleapis.com/css2?family="Roboto", sans-serif&display=swap');
 .App {
   --buttonBackground: #151515;
   --buttonHoverBackground: #050505;
@@ -120,8 +119,7 @@ body, body *{
   flex-wrap: wrap;
 }
 .headlineTextArea {
-  border: 1px solid black;
-  max-width: 850px;
+  max-width: 670px;
   width: fit-content;
   height: fit-content;
   overflow: hidden;
@@ -129,7 +127,7 @@ body, body *{
   caret-color: transparent;
 }
 .headlineTextArea:focus {
-  outline: 0 solid blue;
+  outline: 0;
 }
 #contactButton {
   align-self: start;
@@ -169,6 +167,7 @@ body, body *{
   display: flex;
   flex-wrap: wrap;
   padding-left: calc(13vw);
+  margin-bottom: 5rem;
 }
 .aboutText {
   display: flex;
@@ -223,6 +222,8 @@ body, body *{
   justify-content: center;
   font-size: xx-large;
   text-decoration: underline;
+  margin-top: 4rem;
+  padding-bottom: 4rem;
 }
 .contact {
   max-width: 70vw;
