@@ -9,7 +9,6 @@ interface projectShowInterface {
 export const ProjectShow: React.FC<projectShowInterface> = ({pictureName, descriptionText, link}) => {
     const imageLink = `/assets/${pictureName}`
     return (<>
-        <a id="projects" className="anchor"/>
         <a href={link} className="projectLink" target="_blank" rel="noreferrer noopener">
             <div className="projectCard">
                 <img className="projectPicture" src={imageLink} alt="Project Preview"/>
@@ -17,6 +16,7 @@ export const ProjectShow: React.FC<projectShowInterface> = ({pictureName, descri
                     <h2 className="projectHeadline">Wetterprojekt</h2>
                     <p>
                         {descriptionText}
+                        &nbsp;Noch mehr description text, wow
                     </p>
                 </div>
             </div>

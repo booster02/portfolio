@@ -52,11 +52,13 @@ function App() {
             console.log("set white theme");
         }
     }
+    console.log(window.innerWidth);
 
     return (<div ref={app} className="App">
-        <Navbar toggleTheme={toggleTheme} getWhiteTheme={lightMode}/>
+        <Navbar toggleTheme={toggleTheme} getWhiteTheme={lightMode} mobile={window.innerWidth > 644}/>
         <Intro/>
         <About/>
+        <a id="projects" className="anchor"/>
         <div className="projects">
             <ProjectShow pictureName="weatherPage.png" descriptionText="Das hier ist description text"
                          link="https://booster02.github.io/weather/"/>

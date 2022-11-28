@@ -4,11 +4,11 @@ interface infotextProps {
 }
 
 export const Intro: React.FC<infotextProps> = () => {
-    const [currentText, setCurrentText] = useState("");
+    const [currentText, setCurrentText] = useState("H");
     const [textIndex, setTextIndex] = useState(0);
-    const textList = ["Hello, Visitor", "My name is Béla", "What can I do for you?"]
     const forward = useRef(false);
-    const [delay, setDelay] = useState(100);
+    const [delay, setDelay] = useState(200);
+    const textList = ["Hello, Visitor", "My name is Béla", "What can I do for you?"];
     useEffect(() => {
         if (currentText.length === 0) {
             setTextIndex(i => {
@@ -16,7 +16,7 @@ export const Intro: React.FC<infotextProps> = () => {
             });
         }
         const interval = setInterval(() => {
-            setDelay(100);
+            setDelay(200);
             if (!forward.current && currentText.length === textList[textIndex].length -1) {
                 setDelay(1000);
             }
