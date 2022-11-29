@@ -1,4 +1,5 @@
 import React, {useEffect, useRef, useState} from "react";
+import {ScrollDownIndicator} from "./scroll-down-indicator";
 
 interface infotextProps {
 }
@@ -9,6 +10,7 @@ export const Intro: React.FC<infotextProps> = () => {
     const forward = useRef(false);
     const [delay, setDelay] = useState(200);
     const textList = ["Hello, Visitor", "My name is Béla", "What can I do for you?"];
+    const containerRef = useRef<HTMLDivElement>(null);
     useEffect(() => {
         if (currentText.length === 0) {
             setTextIndex(i => {
@@ -17,7 +19,7 @@ export const Intro: React.FC<infotextProps> = () => {
         }
         const interval = setInterval(() => {
             setDelay(200);
-            if (!forward.current && currentText.length === textList[textIndex].length -1) {
+            if (!forward.current && currentText.length === textList[textIndex].length - 1) {
                 setDelay(1000);
             }
             setCurrentText(getText())
@@ -51,10 +53,36 @@ export const Intro: React.FC<infotextProps> = () => {
         return newText;
     }
 
-    return (<div className="infoText">
-        <h1 className="infoHeadline">
-            <div ref={editableRef => editableRef && editableRef.focus()}
-                 className="headlineTextArea" spellCheck="false">{currentText}<span className="blink">_</span></div>
-        </h1>
-    </div>)
+    useEffect(() => {
+        const handleScroll = () => {
+            if (containerRef?.current) {
+                const offsetTop = window.scrollY;
+                const windowHeight = window.innerHeight;
+                if (offsetTop >= windowHeight / 2 + 172) {
+                    containerRef.current.style.position = "absolute";
+                    containerRef.current.style.marginTop = (windowHeight / 2 + 172) + "px";
+                } else {
+                    containerRef.current.style.position = "fixed";
+                    containerRef.current.style.marginTop = "0";
+                }
+            }
+        }
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        }
+    })
+
+
+    return (<>
+        <div className="infoText" ref={containerRef}>
+            <h1 className="infoHeadline">
+                <div ref={editableRef => editableRef && editableRef.focus()}
+                     className="headlineTextArea" spellCheck="false">{currentText}<span className="blink">_</span>
+                </div>
+            </h1>
+        </div>
+        {<div className="spaceHolder"></div>}
+        <ScrollDownIndicator />
+    </>)
 }

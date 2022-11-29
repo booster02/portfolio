@@ -13,10 +13,13 @@ enum Theme {
 function App() {
     const app = useRef<HTMLDivElement>(null);
     const [lightMode, setLightMode] = useState(false);
+    const introContainer = useRef<HTMLDivElement>(null);
+    const projectsContainer = useRef<HTMLDivElement>(null);
+    const infoText = useRef<HTMLDivElement>(null);
+
     useLayoutEffect(() => {
         if (!window.matchMedia) return;
         if (window.matchMedia('(prefers-color-scheme: light)').matches) {
-            console.log(window.matchMedia('(prefers-color-scheme: light)').matches)
             toggleTheme(Theme.LIGHT);
         }
         window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', event => {
@@ -45,21 +48,18 @@ function App() {
         if (classList.contains("whiteMode")) {
             classList.remove("whiteMode");
             setLightMode(false);
-            console.log("set dark theme");
         } else {
             classList.add("whiteMode");
             setLightMode(true);
-            console.log("set white theme");
         }
     }
-    console.log(window.innerWidth);
 
     return (<div ref={app} className="App">
         <Navbar toggleTheme={toggleTheme} getWhiteTheme={lightMode} mobile={window.innerWidth > 644}/>
         <Intro/>
         <About/>
         <a id="projects" className="anchor"/>
-        <div className="projects">
+        <div className="projects" ref={projectsContainer}>
             <ProjectShow pictureName="weatherPage.png" descriptionText="Das hier ist description text"
                          link="https://booster02.github.io/weather/"/>
             <ProjectShow pictureName="weatherPage.png" descriptionText="Das hier ist description text"

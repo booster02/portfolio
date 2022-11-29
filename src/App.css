@@ -65,11 +65,11 @@ body, body *{
   align-items: center;
   justify-content: center;
   width: 7rem;
-  transition: 0.3s;
+  transition: all 0.3s ease-in-out;
   color: var(--textColor);
 }
 .navItem:hover {
-  color: #222;
+  transform: scale(110%);
   cursor: pointer;
 }
 .navLink{
@@ -78,12 +78,12 @@ body, body *{
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: 0.3s;
+  transition: all 0.3s ease-in-out;
   font-size: 17px;
   color: var(--textColor);
 }
 .navLink:hover {
-  color: #222;
+  transform: scale(110%);
 }
 .theme-toggle {
   display: flex;
@@ -119,7 +119,10 @@ body, body *{
   max-height: 18px;
   margin: 1px var(--buttonMarginRight) 0 1px;
 }
-
+.spaceHolder {
+  top: calc(100vh - 5rem);
+  height: 100vh;
+}
 .infoText {
   height: 100vh;
   width: fit-content;
@@ -129,6 +132,7 @@ body, body *{
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: fixed;
 }
 .infoHeadline, .headlineTextArea{
   line-height: initial;
@@ -161,6 +165,18 @@ body, body *{
   animation: blink 1s linear infinite;
 }
 
+.scrollDownIndicator {
+  margin-top: -5rem;
+  height: 5rem;
+  color: var(--headlineColor);
+  font-size: 5rem;
+  letter-spacing: -5px;
+  opacity: 0.8;
+  text-align: center;
+  animation: bounce 1s linear infinite;
+  filter: drop-shadow(0 0 2px var(--headlineColor));
+}
+
 .subHeadline {
   margin: 1rem auto;
   font-size: 36px;
@@ -176,8 +192,8 @@ body, body *{
   justify-items: start;
   text-align: justify;
   max-width: 500px;
-  margin-left: calc(13vw);
-  margin-bottom: 3rem;
+  margin-bottom: 400px;
+  margin-left: auto;
 }
 #aboutHeadline {
   margin-left: 0;
@@ -209,6 +225,7 @@ body, body *{
   display: flex;
   align-items: center;
   filter: drop-shadow(0 0 2px var(--headlineColor));
+  position: relative;
 }
 .gitHubLogo {
   width: 32px;
@@ -228,6 +245,11 @@ body, body *{
 }
 .emailLogo {
   height: 25px;
+}
+.contactLink {
+  position: absolute;
+  height: 100%;
+  width: 100%;
 }
 
 .projects {
@@ -336,5 +358,11 @@ body, body *{
   }
   .projects {
     margin: auto;
+  }
+}
+
+@keyframes bounce {
+  50% {
+    transform: translateY(-50%);
   }
 }
