@@ -10,7 +10,6 @@ export const ScrollDownIndicator: React.FC = () => {
             if (!scrollIndicator) {
                 return;
             }
-
             const scrollTop = document.documentElement.scrollTop;
             let opacity = 1 - scrollTop / 100;
             if (scrollTop >= 200 || opacity < 0) {

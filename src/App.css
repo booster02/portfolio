@@ -148,7 +148,7 @@ body, body *{
   flex-wrap: wrap;
 }
 .headlineTextArea {
-  max-width: 670px;
+  max-width: 50vw;
   width: fit-content;
   height: fit-content;
   overflow: hidden;
@@ -191,9 +191,10 @@ body, body *{
   flex-direction: column;
   justify-items: start;
   text-align: justify;
-  max-width: 500px;
+  max-width: fit-content;
   margin-bottom: 400px;
   margin-left: auto;
+  margin-right: 5rem;
 }
 #aboutHeadline {
   margin-left: 0;
@@ -338,6 +339,17 @@ body, body *{
   }
 }
 
+@media only screen and (max-width: 1200px) {
+  .infoText {
+    position: absolute;
+  }
+  .headlineTextArea {
+    max-width: 640px;
+  }
+  .aboutText {
+    margin: 13vw;
+  }
+}
 @media only screen and (max-width: 888px) {
   .headlineTextArea {
     font-size: 90px;
@@ -353,6 +365,9 @@ body, body *{
   }
 }
 @media only screen and (max-width: 573px) {
+  .headlineTextArea {
+    font-size: 64px;
+  }
   .projectLink {
     margin: 1rem auto;
   }

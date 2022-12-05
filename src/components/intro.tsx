@@ -1,8 +1,6 @@
 import React, {useEffect, useRef, useState} from "react";
 import {ScrollDownIndicator} from "./scroll-down-indicator";
-
-interface infotextProps {
-}
+interface infotextProps {}
 
 export const Intro: React.FC<infotextProps> = () => {
     const [currentText, setCurrentText] = useState("H");
@@ -58,6 +56,9 @@ export const Intro: React.FC<infotextProps> = () => {
             if (containerRef?.current) {
                 const offsetTop = window.scrollY;
                 const windowHeight = window.innerHeight;
+                if (window.innerWidth <= 1200) {
+                    return;
+                }
                 if (offsetTop >= windowHeight / 2 + 172) {
                     containerRef.current.style.position = "absolute";
                     containerRef.current.style.marginTop = (windowHeight / 2 + 172) + "px";
