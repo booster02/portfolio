@@ -57,6 +57,7 @@ export const Intro: React.FC<infotextProps> = () => {
                 const offsetTop = window.scrollY;
                 const windowHeight = window.innerHeight;
                 if (window.innerWidth <= 1200) {
+                    containerRef.current.style.position = "absolute";
                     return;
                 }
                 if (offsetTop >= windowHeight / 2 + 172) {
