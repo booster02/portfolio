@@ -1,8 +1,8 @@
 import React, {useEffect, useRef, useState} from "react";
 import {ScrollDownIndicator} from "./scroll-down-indicator";
-interface infotextProps {}
+interface infoTextProps {}
 
-export const Intro: React.FC<infotextProps> = () => {
+export const Intro: React.FC<infoTextProps> = () => {
     const [currentText, setCurrentText] = useState("H");
     const [textIndex, setTextIndex] = useState(0);
     const forward = useRef(false);
@@ -16,7 +16,7 @@ export const Intro: React.FC<infotextProps> = () => {
             });
         }
         const interval = setInterval(() => {
-            setDelay(200);
+            setDelay(300);
             if (!forward.current && currentText.length === textList[textIndex].length - 1) {
                 setDelay(1000);
             }
