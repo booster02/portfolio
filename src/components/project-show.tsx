@@ -7,7 +7,7 @@ interface projectShowInterface {
 }
 
 export const ProjectShow: React.FC<projectShowInterface> = ({pictureName, descriptionText, link}) => {
-    const imageLink = `/assets/${pictureName}`
+    const imageLink = `${import.meta.env.BASE_URL}assets/${pictureName}`
     return (<>
         <a href={link} className="projectLink" target="_blank" rel="noreferrer noopener">
             <div className="projectCard">

@@ -4,7 +4,7 @@ export const About: React.FC = () => {
     return (<>
         <a id="about" className="anchor"/>
         <div className="aboutText">
-            <img src="/assets/Me.jpeg" alt="Me" id="portrait" className="picture"/>
+            <img src={`${import.meta.env.BASE_URL}assets/Me.jpeg`} alt="Me" id="portrait" className="picture"/>
             <h2 className="subHeadline" id="aboutHeadline">Béla Oster</h2>
             <p className="aboutMeSubLine">Software Developer <span className="employedBy">currently @thepeaklab</span>
             </p>
@@ -13,10 +13,10 @@ export const About: React.FC = () => {
                 yadayada blah yadayada </p>
             <div className="socials">
                 <div className="gitHub">
-                    <img className="gitHubLogo" src="/assets/github-logo.png" alt="github logo"/>
+                    <img className="gitHubLogo" src={`${import.meta.env.BASE_URL}assets/github-logo.png`} alt="github logo"/>
                     <p>@booster02</p><a className="contactLink" href="https://github.com/booster02" target="_blank"/></div>
                 <div className="email">
-                    <img className="emailLogo" src="/assets/emailLogo.svg" alt="email logo"/>
+                    <img className="emailLogo" src={`${import.meta.env.BASE_URL}assets/emailLogo.svg`} alt="email logo"/>
                     <a className="contactLink" href="mailto:contact@contact.de"/>
                 </div>
             </div>

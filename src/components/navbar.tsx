@@ -8,7 +8,7 @@ interface navbarProps {
 
 export const Navbar: React.FC<navbarProps> = ({toggleTheme, getWhiteTheme, mobile}) => {
     const text = getWhiteTheme ? "Light" : "Dark";
-    const imgPath = text === "Dark" ? "/assets/DarkmodeSwitch.svg" : "/assets/LightmodeSwitch.svg";
+    const imgPath = text === "Dark" ? `${import.meta.env.BASE_URL}assets/DarkmodeSwitch.svg` : `${import.meta.env.BASE_URL}assets/LightmodeSwitch.svg`;
     const button =
         <button className="theme-toggle navItem" onClick={toggleTheme}>
             <div id="outerSwitch">
